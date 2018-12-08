@@ -16,10 +16,10 @@
 					<div class="catalog-nav">
 						<p>Новинки</p>
 						<ul>
-							<li><a href="#">Сливочное</a></li>
-							<li><a href="#">Щербеты</a></li>
-							<li><a href="#">Фруктовый лед</a></li>
-							<li><a href="#">Мелорин</a></li>
+							<li><a href="#" class="link-item">Сливочное</a></li>
+							<li><a href="#" class="link-item">Щербеты</a></li>
+							<li><a href="#" class="link-item">Фруктовый лед</a></li>
+							<li><a href="#" class="link-item">Мелорин</a></li>
 						</ul>
 					</div>
 				</li>
@@ -89,22 +89,34 @@
 	</header>
 	<main class="conteiner">
 		<section class="offer">
-			<h1>Крем-брюле и пломбир с малиновым джемом</h1>
-			<button></button>
-			<button></button>
-			<button></button>
-			<a href="#" class="button">Давайте оба!</a>
+			<h1>Крем-брюле и пломбир <br> с малиновым джемом</h1>
+				<div class="slider-wrap">
+					<ul class="slider">
+						<li>
+							<label class="slider-item"><input type="radio" name="slider-number" checked><span class="radio-indicator"></span></label>
+						</li>
+						<li>
+							<label class="slider-item"><input type="radio" name="slider-number"><span class="radio-indicator"></span></label>
+						</li>
+						<li>
+							<label class="slider-item"><input type="radio" name="slider-number"><span class="radio-indicator"></span></label>
+						</li>
+					</ul>
+					<a href="#" class="button-slider">Давайте оба!</a>
+				</div>
 			<h2 class="visually-hidden">Акции магазина:</h2>
-			<article class="offer-block">
-				<h3>Малинка даром!</h3>
-				<p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-				<a href="#" class="button offer-link">Хочу варенье!</a>
-			</article>
-			<article class="offer-block">
-				<h3>Шоколадки даром!</h3>
-				<p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-				<a href="#" class="button offer-link">Хочу шоколадки!</a>
-			</article>
+		<ul class="offer-block-wrap">
+				<li class="offer-block">
+					<h3>Малинка даром!</h3>
+					<p>При покупке 2 кг любого фруктового мороженого, добавим <br> в ваш заказ банку малинового варенья бесплатно.</p>
+					<a href="#" class="button offer-link">Хочу варенье!</a>
+				</li>
+				<li class="offer-block">
+					<h3>Шоколадки даром!</h3>
+					<p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку  <br>вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+					<a href="#" class="button offer-link">Хочу шоколадки!</a>
+				</li>
+			</ul>
 		</section>
 		<section class="catalog">
 			<h2 class="visually-hidden">Каталог товаров:</h2>

@@ -444,7 +444,7 @@ input[type="radio"].visually-hidden {
 	margin-bottom: 40px;
 }
 
-.button-slider {
+.button-slider, .button {
 	display: inline-block;
 	text-decoration: none;
 	color: #fff;
@@ -453,9 +453,22 @@ input[type="radio"].visually-hidden {
 	font-size: 32px;
 	line-height: 44px;
 	border-radius: 30px;
-	background: linear-gradient(to top, #e74a35, #f26843);
+	background: linear-gradient(to top, #e74a35, #f26843), rgba(255,255,255);
 	box-shadow: 0 1px 3px 1px #ac1000;
 	text-shadow: 0px 2px 5px #a0200b;
+}
+
+.button-slider:hover,
+.button-slider:active,
+.button:hover,
+.button:active {
+	background: linear-gradient(to bottom,#f58669 0%,#ec6f5e 100%);
+}
+
+.button-slider:active, 
+.button:active {
+	background: linear-gradient(to bottom,#d74632 0%,#e1613e 100%);
+	box-shadow: inset 0 2px 2px 0px #942718;
 }
 
 .slider li {
@@ -479,12 +492,17 @@ input[type="radio"].visually-hidden {
 	background-color: #fff;
 }
 
+.slider-item input:hover:not(:checked) + .radio-indicator {
+	background-color: #b2c1b7;
+}
+
 .radio-indicator {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
 	border: 2px solid #fff;
 	border-radius: 50%;
+	cursor: pointer;
 }
 
 .offer-block-wrap {
@@ -507,6 +525,7 @@ input[type="radio"].visually-hidden {
 	padding-right: 26px;
 	border-radius: 17px;
 	padding-bottom: 25px;
+	margin-bottom: 40px;
 }
 
 .offer-block h3 {
@@ -538,6 +557,177 @@ input[type="radio"].visually-hidden {
 	text-shadow: 0px 2px 5px #a0200b;
 }
 
+.offer-block-wrap .offer-link:hover,
+.offer-block-wrap .offer-link:active {
+	background: linear-gradient(to bottom,#f58669 0%,#ec6f5e 100%);
+}
+
+.offer-block-wrap .offer-link:active {
+	background: linear-gradient(to bottom,#d74632 0%,#e1613e 100%);
+	box-shadow: inset 0 2px 2px 0px #942718;
+}
+
 .offer-block-wrap li:last-child {
 	background-image: url(../img/chocolate.jpg);
+}
+
+/*Стилизация catalog*/
+
+.catalog {
+	display: flex;
+	text-align: center;
+	justify-content: space-between;
+	margin-bottom: 36px;
+}
+
+.catalog-item {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	cursor: pointer;
+}
+
+.signature b {
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.image-link {
+	padding: 0;
+	margin: 0;
+	max-height: 267px;
+	text-decoration: none;
+	position: relative;
+	margin-bottom: 14px;
+}
+
+.price {
+	position: absolute;
+	top: 211px;
+	color: #fff;
+	left: 0;
+	font-size: 45px;
+	line-height: 45px;
+}
+
+.price b {
+	font-size: 30px;
+	line-height: 45px;
+
+}
+
+.catalog-link {
+	margin: 0;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-shadow: none;
+	display: inline-block;
+	top: 338px;
+	left: 50%;
+	margin-left: -100px;
+	max-width: 200px;
+	font-size: 18px;
+	line-height: 24px;
+	position: absolute;
+	display: none;
+}
+
+.catalog-item:hover .catalog-link, 
+.catalog-item:hover:before{
+	display: block;
+}
+
+
+.image-link:before {
+	content: '';
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background-image: url(../img/hit.png);
+}
+
+.catalog-item:before {
+	top: -6px;
+	left: -13px;
+	padding-left: 13px;
+	padding-right: 13px;
+	padding-bottom: 85px;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,0.2);
+	box-shadow: 0px 5px 60px 0px rgba(0,0,0,0.4);
+	border-radius: 5px;
+	display: none;
+}
+
+/*Стилезация about-us*/
+
+.about-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	max-width: 1146px;
+}
+
+.about-us {
+	background-image: url(../img/about-bg.jpg);
+	background-repeat: no-repeat;
+	border-radius: 18px;
+	padding-top: 25px;
+	padding-left: 20px;
+	padding-right: 24px;
+	padding-bottom: 20px;
+}
+
+.about-us h3 {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 10px;
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: 500;
+	color: #000;
+}
+
+.about-item p {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	margin-top: 13px;
+	line-height: 22px;
+	margin-left: 8px;
+	color: #000;
+	font-weight: 400;
+	display: inline-block;
+}
+
+.about-item {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 7px;
+}
+
+.about-shop {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.blog {
+	border: 1px solid red;
+}
+
+.mail {
+	border: 1px solid green;
+	width: 300px;
 }

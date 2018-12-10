@@ -620,7 +620,7 @@ input[type="radio"].visually-hidden {
 
 }
 
-.catalog-link {
+.preview {
 	margin: 0;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -636,7 +636,7 @@ input[type="radio"].visually-hidden {
 	display: none;
 }
 
-.catalog-item:hover .catalog-link, 
+.catalog-item:hover .preview, 
 .catalog-item:hover:before{
 	display: block;
 }
@@ -687,12 +687,13 @@ input[type="radio"].visually-hidden {
 	padding-left: 20px;
 	padding-right: 24px;
 	padding-bottom: 20px;
+	margin-bottom: 45px;
 }
 
 .about-us h3 {
 	margin: 0;
 	padding: 0;
-	margin-bottom: 10px;
+	margin-bottom: 14px;
 	font-size: 24px;
 	line-height: 30px;
 	font-weight: 500;
@@ -714,20 +715,94 @@ input[type="radio"].visually-hidden {
 .about-item {
 	display: flex;
 	align-items: flex-start;
-	margin-bottom: 7px;
+	margin-bottom: 6px;
 }
 
 .about-shop {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
 .blog {
-	border: 1px solid red;
+	background-image: url(../img/strawberry.png);
+	color: #000;
+	padding-top: 22px;
+	padding-left: 20px;
+	padding-right: 253px;
+	padding-bottom: 80px;
+}
+
+.blog p {
+	padding: 0;
+	margin: 0;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.blog-title {
+	padding: 0;
+	margin: 0;
+	font-size: 24px;
+	line-height: 30px;
+}
+
+.blog-title b {
+	background-image: linear-gradient(to bottom, #000, #000);
+	background-position: 0 26px;
+ 	background-repeat: repeat-x;
+  	background-size: 1px;
 }
 
 .mail {
-	border: 1px solid green;
-	width: 300px;
+	padding: 5px;
+	color: #5a5a5a;
+	position: relative;
+}
+
+.mail-bg {
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	position: absolute;/*#fe9e90 40px*/
+	z-index: -1;
+	background-image: repeating-linear-gradient(to right,
+                        #92cdff 0, #92cdff 20px,
+                        #fff 20px, #fff 40px,
+                        #fe9e90 40px, #fe9e90 80px);
+	bgr
+}
+
+.write-mail label {
+	display: block;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 400;
+	margin-bottom: 34px;
+	padding: 0;
+}
+
+.write-mail {
+	padding: 30px 20px;
+	background-color: #f8f7f4;
+}
+
+.write-mail input {
+	width: 100%;
+	max-width: 330px;
+}
+
+.send-btn {
+	padding: 0;
+	margin: 0;
+	padding: 10px 20px;
+	text-shadow: none;
+	font-size: 18px;
+	font-weight: 700;	
+	line-height: 24px;
+	border: 0;
+	margin-left: 12px;
 }

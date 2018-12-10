@@ -666,7 +666,7 @@ input[type="radio"].visually-hidden {
 	display: none;
 }
 
-/*Стилезация about-us*/
+/*Стилезация about-shop*/
 
 .about-list {
 	margin: 0;
@@ -687,13 +687,13 @@ input[type="radio"].visually-hidden {
 	padding-left: 20px;
 	padding-right: 24px;
 	padding-bottom: 20px;
-	margin-bottom: 45px;
+	margin-bottom: 39px;
 }
 
 .about-us h3 {
 	margin: 0;
 	padding: 0;
-	margin-bottom: 14px;
+	margin-bottom: 9px;
 	font-size: 24px;
 	line-height: 30px;
 	font-weight: 500;
@@ -704,7 +704,7 @@ input[type="radio"].visually-hidden {
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
-	margin-top: 13px;
+	margin-top: 14px;
 	line-height: 22px;
 	margin-left: 8px;
 	color: #000;
@@ -731,7 +731,7 @@ input[type="radio"].visually-hidden {
 	padding-top: 22px;
 	padding-left: 20px;
 	padding-right: 253px;
-	padding-bottom: 80px;
+	padding-bottom: 86px;
 }
 
 .blog p {
@@ -751,7 +751,7 @@ input[type="radio"].visually-hidden {
 
 .blog-title b {
 	background-image: linear-gradient(to bottom, #000, #000);
-	background-position: 0 26px;
+	background-position: 0 27px;
  	background-repeat: repeat-x;
   	background-size: 1px;
 }
@@ -769,11 +769,12 @@ input[type="radio"].visually-hidden {
 	height: 100%;
 	position: absolute;/*#fe9e90 40px*/
 	z-index: -1;
-	background-image: repeating-linear-gradient(to right,
-                        #92cdff 0, #92cdff 20px,
-                        #fff 20px, #fff 40px,
-                        #fe9e90 40px, #fe9e90 80px);
-	bgr
+	background-image: repeating-linear-gradient(135deg,
+                        #fff 0, #fff 7px,
+                        #92cdff 7px, #92cdff 14px,
+                        #fff 14px, #fff 21px, 
+                        #fe9e90 21px, #fe9e90 28px);
+	border-radius: 15px;
 }
 
 .write-mail label {
@@ -788,21 +789,144 @@ input[type="radio"].visually-hidden {
 .write-mail {
 	padding: 30px 20px;
 	background-color: #f8f7f4;
+	border-radius: 15px;
 }
 
 .write-mail input {
+	padding: 12px 12px;
+	font-size: 16px;
+	font-weight: 400;
+	border: 1px solid #b2b2b2;
+	border-radius: 5px;
 	width: 100%;
-	max-width: 330px;
+	max-width: 340px;
 }
 
 .send-btn {
 	padding: 0;
 	margin: 0;
-	padding: 10px 20px;
+	padding: 10px 13px;
 	text-shadow: none;
 	font-size: 18px;
 	font-weight: 700;	
 	line-height: 24px;
 	border: 0;
 	margin-left: 12px;
+}
+
+/*Стилизация footer*/
+
+footer .conteiner{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 40px;
+	margin-bottom: 30px;
+	justify-content: space-between;
+}
+
+.map {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-top: 40px;
+	position: relative;
+	height: 430px;
+}
+
+
+.feedback {
+	display: inline-block;
+	text-align: left;
+	position: absolute;
+	z-index: 1;
+	color: #000;
+	top: 60px;
+	right: 0;
+	background-color: #fff;
+	margin-left: auto;
+	margin-right: 27px;
+	padding-right: 0;
+	padding: 30px;
+	padding-left: 25px;
+	border-radius: 10px;
+}
+
+.feedback p {
+	margin: 0;
+	padding: 0;
+	display: block;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+}
+
+.feedback span {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 700;
+	display: block;
+}
+
+.feedback .phone {
+	margin-top: 18px;
+}
+
+.feedback-button {
+	padding: 0;
+	margin: 0;
+	padding: 10px 25px;
+	margin-top: 29px;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.footer-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	max-width: 293px;
+	flex-wrap: wrap;
+	background-image: url(../img/heart.png);
+	background-repeat: no-repeat;
+	background-position: 0px 3px;
+	
+}
+
+.footer-nav-item:nth-child(2) {
+	order: 2;
+}
+
+.footer-nav-item:nth-child(3) {
+	margin-right: 0;
+}
+
+
+.footer-nav-item:nth-child(4) {
+	order: 3;
+	margin-right: 0;
+}
+
+.footer-nav li {
+	margin-right: 30px;
+	border-bottom: 1px solid red;
+}
+
+.social a{
+	font-size: 0;
+	margin-right: 15px;	
+}
+
+.social a:last-child {
+	margin-right: 0;
+}
+
+.footer-nav-item a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 400;
 }

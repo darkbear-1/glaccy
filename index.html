@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" />
 	<title>Gllacy</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="">
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="https://api-maps.yandex.ru/2.1/?apikey=9c925dc1-0f77-4cd8-8459-018b9f4725b3&lang=ru_RU" type="text/javascript">
     </script>
@@ -58,10 +60,10 @@
 				<div class="feedback-header">
 						<form action="#" class="feedback-header-form" method="post">
 							<label><span  class="visually-hidden">Электронная почта</span>
-							<input class="feedback-header-item" type="text" placeholder="Электронная почта">
+							<input class="feedback-header-mail" type="text" placeholder="Электронная почта">
 							</label>
 							<label><span  class="visually-hidden">Пароль</span>
-							<input class="feedback-header-item" type="text" placeholder="Пароль">
+							<input class="feedback-header-pass" type="text" placeholder="Пароль">
 							</label>
 							<button type="submit" class="button-sbm">Войти</button>
 							<p class="feedback-header-links">
@@ -300,7 +302,8 @@
 		var findBlur = document.querySelector(".login");
 		var findInput = document.querySelector(".find-input");
 		var loginShow = document.querySelector(".feedback-header");
-		var loginInput = document.querySelector(".feedback-header-item");
+		var inputMail = document.querySelector(".feedback-header-mail");
+		var inputPass = document.querySelector(".feedback-header-pass");
 		var loginBlur = document.querySelector(".basket");
 		var modalClick = document.querySelector(".feedback-button");
 		var modal = document.querySelector(".modal");
@@ -340,15 +343,21 @@
 			findShow.classList.remove("find-show");
 		})
 
-		loginInput.addEventListener("focus", function() {
+		inputMail.addEventListener("focus", function() {
 			loginShow.classList.add("feedback-header-show");
 		})
 
-		loginInput.addEventListener("blur", function() {
-			loginShow.classList.remove("feedback-header-show");
+		inputPass.addEventListener("focus", function() {
+			loginShow.classList.add("feedback-header-show");
 		})
 
+		function remove(e) {
+		    if(!e.target.matches('.feedback-header, .feedback-header *')) {
+		        loginShow.classList.remove('feedback-header-show');
+		    }
+		};
 
+		window.addEventListener("click", remove);
 
 		modalClick.addEventListener("click", function(e) {
 			e.preventDefault();
@@ -361,6 +370,15 @@
 			modal.classList.remove("modal-show");
 			overlay.classList.remove("overlay-show");
 		})
+
+		function removeModal(e) {
+		    if(!e.target.matches('.modal, .modal *')) {
+		        modal.classList.remove('modal-show');
+		        overlay.classList.remove('overlay-show');
+		    }
+		};
+
+		overlay.addEventListener("click", removeModal);
 
     ymaps.ready(init);
 

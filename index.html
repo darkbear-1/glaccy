@@ -93,17 +93,30 @@
 	</header>
 	<main class="conteiner">
 		<section class="offer">
-			<h1>Крем-брюле и пломбир <br> с малиновым джемом</h1>
+				<div class="slider-page-wrap">
+					<div class="slider-page page-one page-show">
+						<h1>Крем-брюле и пломбир <br> с малиновым джемом</h1>
+						<img src="img/ice-cream.png" alt="">
+					</div>
+					<div class="slider-page page-two">
+						<h1>Шоколадный пломбир <br>и лимонный сорбет</h1>
+						<img src="img/ice-cream2.png" alt="">
+					</div>
+					<div class="slider-page page-two">
+						<h1>Пломбир с помадкой <br> и клубничный щербет</h1>
+						<img src="img/ice-cream3.png" alt="">
+					</div>
+				</div>
 				<div class="slider-wrap">
 					<ul class="slider">
 						<li>
-							<label class="slider-item"><input type="radio" name="slider-number" checked><span class="radio-indicator"></span></label>
+							<label class="slider-item"><input type="radio" name="slider-number" checked><span class="radio-indicator" tabindex="0"></span></label>
 						</li>
 						<li>
-							<label class="slider-item"><input type="radio" name="slider-number"><span class="radio-indicator"></span></label>
+							<label class="slider-item"><input type="radio" name="slider-number"><span class="radio-indicator" tabindex="0"></span></label>
 						</li>
 						<li>
-							<label class="slider-item"><input type="radio" name="slider-number"><span class="radio-indicator"></span></label>
+							<label class="slider-item"><input type="radio" name="slider-number"><span class="radio-indicator" tabindex="0"></span></label>
 						</li>
 					</ul>
 					<a href="#" class="button-slider">Давайте оба!</a>
@@ -132,6 +145,7 @@
 				<span class="signature"><b>Сливочное с апельсиновым <br> джемом и цитрусовой стружкой</b>
 				</span>
 				<a href="#" class="button preview">Быстрый просмотр</a>
+				<span class="image-link-show"></span>
 			</p>
 			<p class="catalog-item">
 				<a href="#" class="image-link">`
@@ -141,6 +155,7 @@
 				<span class="signature"><b>Сливочно-кофейное с кусочками <br> шоколада</b>
 				</span>
 				<a href="#" class="button preview">Быстрый просмотр</a>
+				<span class="image-link-show"></span>
 			</p>
 			<p class="catalog-item">
 				<a href="#" class="image-link">
@@ -150,15 +165,17 @@
 				<span class="signature"><b>Сливочно-клубничное с <br> присыпкой из белого шоколада</b>
 				</span>
 				<a href="#" class="button preview">Быстрый просмотр</a>
+				<span class="image-link-show"></span>
 			</p>
 			<p class="catalog-item">
 				<a href="#" class="image-link">
 					<img src="img/catalog-image4.png" alt="">
 					<span class="price">415 &#8381<b>/кг</b></span>
-			</a>
+				</a>
 				<span class="signature"><b>Сливочное крем-брюле с <br> карамельной подливкой</b>
 				</span>
 				<a href="#" class="button preview">Быстрый просмотр</a>
+				<span class="image-link-show"></span>
 			</p>
 		</section>
 		<div class="about-shop">
@@ -305,6 +322,11 @@
 		var inputMail = document.querySelector(".feedback-header-mail");
 		var inputPass = document.querySelector(".feedback-header-pass");
 		var loginBlur = document.querySelector(".basket");
+		var radioIndicator = document.querySelectorAll(".radio-indicator");
+		var sliderPage = document.querySelectorAll(".slider-page")
+		var imageLink = document.querySelectorAll(".image-link");
+		var preview = document.querySelectorAll(".preview");
+		var imageShow = document.querySelectorAll(".image-link-show");
 		var modalClick = document.querySelector(".feedback-button");
 		var modal = document.querySelector(".modal");
 		var overlay = document.querySelector(".overlay");
@@ -349,6 +371,77 @@
 
 		inputPass.addEventListener("focus", function() {
 			loginShow.classList.add("feedback-header-show");
+		})
+
+		radioIndicator[0].addEventListener("click", function () {
+			sliderPage[1].classList.remove("page-show");
+			sliderPage[2].classList.remove("page-show");
+			sliderPage[0].classList.add("page-show");
+			document.body.style.backgroundColor="#849d8f";
+		})
+
+		radioIndicator[1].addEventListener("click", function () {
+			sliderPage[0].classList.remove("page-show");
+			sliderPage[2].classList.remove("page-show");
+			sliderPage[1].classList.add("page-show");
+			document.body.style.backgroundColor="#8996a6";
+			// document.body.style.backgroundImage='url(img/ice-cream2.png)';
+		})
+
+		radioIndicator[1].onclick = function() {
+		  console.log('da');
+
+		};
+
+		radioIndicator[2].addEventListener("click", function () {
+			sliderPage[0].classList.remove("page-show");
+			sliderPage[1].classList.remove("page-show");
+			sliderPage[2].classList.add("page-show");
+			document.body.style.backgroundColor="#9d8b84";
+		})
+
+		imageLink[0].addEventListener("focus", function() {
+			imageShow[0].classList.add("link-show");
+			preview[0].classList.add("preview-show");
+			console.log('1');
+		})
+
+		preview[0].addEventListener("blur", function() {
+			imageShow[0].classList.remove("link-show");
+			preview[0].classList.remove("preview-show");
+		})
+
+		imageLink[1].addEventListener("focus", function() {
+			imageShow[1].classList.add("link-show");
+			preview[1].classList.add("preview-show");
+			console.log('2');
+		})
+
+		preview[1].addEventListener("blur", function() {
+			imageShow[1].classList.remove("link-show");
+			preview[1].classList.remove("preview-show");
+		})
+
+		imageLink[2].addEventListener("focus", function() {
+			imageShow[2].classList.add("link-show");
+			preview[2].classList.add("preview-show");
+			console.log('2');
+		})
+
+		preview[2].addEventListener("blur", function() {
+			imageShow[2].classList.remove("link-show");
+			preview[2].classList.remove("preview-show");
+		})
+
+		imageLink[3].addEventListener("focus", function() {
+			imageShow[3].classList.add("link-show");
+			preview[3].classList.add("preview-show");
+			console.log('2');
+		})
+
+		preview[3].addEventListener("blur", function() {
+			imageShow[3].classList.remove("link-show");
+			preview[3].classList.remove("preview-show");
 		})
 
 		function remove(e) {

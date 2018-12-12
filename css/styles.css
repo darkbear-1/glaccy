@@ -7,9 +7,7 @@ body {
 	font-weight: 700;
 	color: #fff;
 	background-color: #849d8f;
-	background-image: url(../img/ice-cream.png);
-	background-repeat: no-repeat;
-	background-position: center top;
+	transition: 0.5s;
 }
 
 .visually-hidden:not(:focus):not(:active),
@@ -38,7 +36,8 @@ input[type="radio"].visually-hidden {
 .main-header {
 	display: flex;
 	justify-content: flex-start;
-	margin-bottom: 270px;
+	position: relative;
+	z-index: 1;
 }
 
 .header-logo {
@@ -351,10 +350,6 @@ input[type="radio"].visually-hidden {
 	display: block;
 }
 
-.border {
-	border: 1px solid red;
-}
-
 .feedback-header-form {
 	justify-content: space-around;
 	display: flex;
@@ -446,6 +441,7 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 40px;
+	position: relative;
 }
 
 .button-slider, .button {
@@ -500,6 +496,44 @@ input[type="radio"].visually-hidden {
 	background-color: #b2c1b7;
 }
 
+.radio-indicator:focus {
+	background-color: #b2c1b7;
+}
+
+.slider-page-wrap {
+	height: 423px;
+	position: relative;
+}
+
+.slider-page {
+	transition: 0.5s;
+	opacity: 0;
+	top: 0;
+	height: 423px;
+	width: 100%;
+	position: absolute;
+}
+
+.slider-page h1 {
+	top: 270px;
+	z-index: 1;
+	width: 100%;
+	left: 0;
+	position: absolute;
+}
+
+.slider-page img {
+	top: -120px;
+	left: 50%;
+	z-index: -1;
+	margin-left: -523px;
+	position: absolute;
+}
+
+.page-show {
+	opacity: 1;
+}
+
 .radio-indicator {
 	display: inline-block;
 	width: 20px;
@@ -512,6 +546,8 @@ input[type="radio"].visually-hidden {
 .offer-block-wrap {
 	display: flex;
 	justify-content: space-between;
+	z-index: 1;
+	position: relative;
 }
 
 .offer-block-wrap {
@@ -597,6 +633,8 @@ input[type="radio"].visually-hidden {
 	margin: 0;
 	padding: 0;
 	font-weight: 500;
+	z-index: 1;
+	position: relative;
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
@@ -606,6 +644,7 @@ input[type="radio"].visually-hidden {
 	max-height: 267px;
 	text-decoration: none;
 	position: relative;
+	z-index: 1;
 	margin-bottom: 14px;
 }
 
@@ -614,6 +653,7 @@ input[type="radio"].visually-hidden {
 	top: 211px;
 	color: #fff;
 	left: 0;
+	z-index: 1;
 	font-size: 45px;
 	line-height: 45px;
 }
@@ -629,6 +669,7 @@ input[type="radio"].visually-hidden {
 	padding-left: 15px;
 	padding-right: 15px;
 	text-shadow: none;
+	z-index: 1;
 	display: inline-block;
 	top: 338px;
 	left: 50%;
@@ -640,8 +681,12 @@ input[type="radio"].visually-hidden {
 	display: none;
 }
 
-.catalog-item:hover .preview, 
-.catalog-item:hover:before{
+.preview-show {
+	display: block;
+}
+
+.catalog-item:hover .preview,
+.catalog-item:hover .image-link-show{
 	display: block;
 }
 
@@ -651,10 +696,11 @@ input[type="radio"].visually-hidden {
 	position: absolute;
 	width: 60px;
 	height: 60px;
+	z-index: 1;
 	background-image: url(../img/hit.png);
 }
 
-.catalog-item:before {
+.image-link-show {
 	top: -6px;
 	left: -13px;
 	padding-left: 13px;
@@ -664,10 +710,15 @@ input[type="radio"].visually-hidden {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	z-index: 0;
 	background-color: rgba(255,255,255,0.2);
 	box-shadow: 0px 5px 60px 0px rgba(0,0,0,0.4);
 	border-radius: 5px;
 	display: none;
+}
+
+.link-show {
+	display: block;
 }
 
 /*Стилезация about-shop*/
@@ -929,7 +980,6 @@ footer .conteiner{
 }
 
 .social svg {
-
 	border: 3px solid #c2cec7;
 	border-radius: 50%;
 }

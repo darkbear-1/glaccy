@@ -24,7 +24,7 @@ input[type="radio"].visually-hidden {
 	white-space: nowrap;
 
 	clip-path: inset(100%);
-	clip: rect(0 0 0 0);
+	clip: rect(0,0,0,0);
 	overflow: hidden;
 }
 
@@ -42,7 +42,8 @@ input[type="radio"].visually-hidden {
 
 .header-logo {
 	margin: 0;
-	padding: 0;
+	padding: 0; 
+	height: 64px;
 	margin-top: 8px;
 }
 
@@ -78,6 +79,7 @@ input[type="radio"].visually-hidden {
 	line-height: 18px;
 	padding: 9px 16px;
 	color: #fff;
+	outline: 0;
 }
 
 .site-nav span {
@@ -120,7 +122,7 @@ input[type="radio"].visually-hidden {
 	box-shadow: 0px 20px 40px 0 rgba(0,0,0,0.4);
 	top: 33px;
 	border-radius: 5px;
-	height: 173px;
+	height: 175px;
 	width: 145px;
 	color: #000;
 	background-color: #f8f7f4;
@@ -193,7 +195,6 @@ input[type="radio"].visually-hidden {
 }
 
 .catalog-nav li:last-child a {
-	padding-bottom: auto;
 	border-radius: 5px;
 }
 
@@ -223,10 +224,19 @@ input[type="radio"].visually-hidden {
 	padding-right: 16px;
 	text-decoration: none;
 	color: #fff;
-	margin-right: 10px;
 	font-size: 14px;
 	line-height: 16px;
 	font-weight: 500;
+	outline: 0;
+}
+
+.user-nav li {
+	margin-right: 10px;
+}
+
+.user-nav li:nth-child(3),
+.user-nav li:last-child {
+	margin-right: 0;
 }
 
 .user-nav .basket {
@@ -268,6 +278,17 @@ input[type="radio"].visually-hidden {
 .user-nav a:focus circle,
 .user-nav a:focus polygon {
 	fill: #000;
+}
+
+.user-nav .basket:hover path,
+.user-nav .basket:hover circle,
+.user-nav .basket:focus circle {
+	fill: #000;
+}
+
+.user-nav .basket:focus polygon,
+.user-nav .basket:hover polygon {
+	fill: #e84d37;
 }
 
 .loop-link {
@@ -406,12 +427,14 @@ input[type="radio"].visually-hidden {
 	border-radius: 22px;
 	font-weight: 700;
 	height: 50px;
+	outline: 0;
 }
 
 .button-sbm:hover,
 .button-sbm:active,
 .button-sbm:hover,
-.button-sbm:active {
+.button-sbm:active,
+.button-sbm:focus {
 	background: linear-gradient(to bottom,#f58669 0%,#ec6f5e 100%);
 }
 
@@ -505,15 +528,18 @@ input[type="radio"].visually-hidden {
 	font-size: 32px;
 	line-height: 44px;
 	border-radius: 30px;
-	background: linear-gradient(to top, #e74a35, #f26843), rgba(255,255,255);
+	background: linear-gradient(to top, #e74a35, #f26843);
 	box-shadow: 0 1px 3px 1px #ac1000;
 	text-shadow: 0px 2px 5px #a0200b;
+	outline: 0;
 }
 
 .button-slider:hover,
 .button-slider:active,
+.button-slider:focus,
 .button:hover,
-.button:active {
+.button:active,
+.button:focus {
 	background: linear-gradient(to bottom,#f58669 0%,#ec6f5e 100%);
 }
 
@@ -540,17 +566,17 @@ input[type="radio"].visually-hidden {
 	display: none;
 }
 
-.slider-item input:checked + .radio-indicator {
-	background-color: #fff;
-}
-
-.slider-item input:hover:not(:checked) + .radio-indicator {
+.radio-indicator:hover:not(.page-active) {
 	background-color: #b2c1b7;
 }
 
-.radio-indicator:focus {
+.radio-indicator:focus:not(.page-active) {
 	background-color: #b2c1b7;
 	outline: 0;
+}
+
+.page-active {
+	background-color: #fff;
 }
 
 .slider-page-wrap {
@@ -594,6 +620,7 @@ input[type="radio"].visually-hidden {
 	border: 2px solid #fff;
 	border-radius: 50%;
 	cursor: pointer;
+	outline: 0;
 }
 
 .offer-block-wrap {
@@ -610,6 +637,7 @@ input[type="radio"].visually-hidden {
 }
 
 .offer-block {
+	background-color: #a00002;
 	background-image: url(../img/malin.jpg);
 	background-repeat: no-repeat;
 	background-position: top left;
@@ -647,12 +675,12 @@ input[type="radio"].visually-hidden {
 	float: right;
 	background: linear-gradient(to top, #e74a35, #f26843);
 	box-shadow: 0 1px 3px 1px #ac1000;
-	text-shadow: 0px 2px 5px #a0200b;
 }
 
 .offer-block-wrap .offer-link:hover,
-.offer-block-wrap .offer-link:active {
+.offer-block-wrap .offer-link:focus {
 	background: linear-gradient(to bottom,#f58669 0%,#ec6f5e 100%);
+	outline: 0;
 }
 
 .offer-block-wrap .offer-link:active {
@@ -661,6 +689,7 @@ input[type="radio"].visually-hidden {
 }
 
 .offer-block-wrap li:last-child {
+	background-color: #4d2916;
 	background-image: url(../img/chocolate.jpg);
 }
 
@@ -682,6 +711,12 @@ input[type="radio"].visually-hidden {
 	cursor: pointer;
 }
 
+.catalog-item img {
+	margin-bottom: 15px;
+	position: relative;
+	z-index: 1;
+}
+
 .signature-link {
 	text-decoration: none;
 	color: #fff;
@@ -697,6 +732,7 @@ input[type="radio"].visually-hidden {
 .signature-link:active,
 .signature-link:focus {
 	color: #e84d37;
+	outline: 0;
 }
 
 .signature-link:hover,
@@ -801,6 +837,7 @@ input[type="radio"].visually-hidden {
 }
 
 .about-us {
+	background-color: #ece1c6;
 	background-image: url(../img/about-bg.jpg);
 	background-repeat: no-repeat;
 	border-radius: 18px;
@@ -847,12 +884,14 @@ input[type="radio"].visually-hidden {
 }
 
 .blog {
+	background-color: #fff;
 	background-image: url(../img/strawberry.png);
 	color: #000;
 	padding-top: 22px;
 	padding-left: 20px;
 	padding-right: 253px;
 	padding-bottom: 86px;
+	border-radius: 13px;
 }
 
 .blog p {
@@ -974,6 +1013,7 @@ footer .conteiner{
 	margin-top: 40px;
 	position: relative;
 	height: 430px;
+	background-image: url(../img/map.jpg);
 }
 
 
@@ -1064,6 +1104,7 @@ footer .conteiner{
 .social a{
 	font-size: 0;
 	margin-right: 8px;	
+	outline: 0;
 }
 
 .social svg {
@@ -1092,6 +1133,18 @@ footer .conteiner{
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
+.footer-nav-item a:hover,
+.footer-nav-item a:active,
+.footer-nav-item a:focus {
+	color: #e84d37;
+	outline: 0;
+}
+
+.footer-nav-item a:hover,
+.footer-nav-item a:focus {
+	border-bottom: 1px solid rgba(236,89,60, 0.3);
+}
+
 .copyright img { 
 	width: 108px;
 	height: 39px;
@@ -1117,6 +1170,18 @@ footer .conteiner{
 	text-decoration: none;
 	color: #fff;
 	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.copyright a:hover,
+.copyright a:active,
+.copyright a:focus {
+	color: #e84d37;
+	outline: 0;
+}
+
+.copyright a:hover,
+.copyright a:focus {
+	border-bottom: 1px solid rgba(236,89,60, 0.3);
 }
 
 /*Стилизация modal*/
@@ -1198,6 +1263,16 @@ footer .conteiner{
 	border: 1px solid #d3d3d2;
 	font-size: 16px;
  	border-radius: 5px;
+}
+
+.modal-item input:focus {
+	outline: 0;
+	box-shadow: 0 0 0 2px #8fbdec;
+}
+
+.modal-item input:hover {
+	outline: 0;
+	box-shadow: 0 0 0 2px #c7c6c5;
 }
 
 .modal-item input:focus {

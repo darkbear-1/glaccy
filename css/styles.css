@@ -93,16 +93,16 @@ input[type="radio"].visually-hidden {
 	color: #fff;
 }
 */
-.site-nav a:hover,
-.site-nav a:focus {
+.site-nav .header-link:hover,
+.site-nav .header-link:focus {
 	background-color: #f8f7f4;
 	border: 0;
 	border-radius: 15px;
 	color: #000;
 }
 
-.site-nav a:active,
-.user-nav a:active {
+.site-nav .header-link:active,
+.user-nav .header-link:active {
 	box-shadow: inset 0px 2px 1px 1px #696969;
 }
 
@@ -250,10 +250,15 @@ input[type="radio"].visually-hidden {
 	padding: 4px 8px;
 }
 
-.user-nav a:hover,
-.user-nav a:focus {
+.user-nav .user-links:hover,
+.user-nav .user-links:focus {
 	background-color: #fff;
 	color: #000;
+}
+
+.user-nav .user-links:active,
+.user-nav .user-links:active {
+	box-shadow: inset 0px 2px 1px 1px #696969;
 }
 
 .user-nav a:hover path,
@@ -316,6 +321,16 @@ input[type="radio"].visually-hidden {
 	border-radius: 5px;
 }
 
+.find-form input:focus {
+	outline: 0;
+	box-shadow: 0 0 0 2px #8fbdec;
+}
+
+.find-form input:hover {
+	outline: 0;
+	box-shadow: 0 0 0 2px #c7c6c5;
+}
+
 .login-li {
 	position: relative;
 }
@@ -363,6 +378,18 @@ input[type="radio"].visually-hidden {
 	margin-bottom: 20px;
 	font-size: 14px;
 	line-height: 24px;
+	border: 1px solid #d3d3d2;
+	border-radius: 5px;
+}
+
+.feedback-header-form input:focus {
+	outline: 0;
+	box-shadow: 0 0 0 2px #8fbdec;
+}
+
+.feedback-header-form input:hover {
+	outline: 0;
+	box-shadow: 0 0 0 2px #c7c6c5;
 }
 
 .button-sbm {
@@ -381,6 +408,19 @@ input[type="radio"].visually-hidden {
 	height: 50px;
 }
 
+.button-sbm:hover,
+.button-sbm:active,
+.button-sbm:hover,
+.button-sbm:active {
+	background: linear-gradient(to bottom,#f58669 0%,#ec6f5e 100%);
+}
+
+.button-sbm:active, 
+.button-sbm:active {
+	background: linear-gradient(to bottom,#d74632 0%,#e1613e 100%);
+	box-shadow: inset 0 2px 2px 0px #942718;
+}
+
 .feedback-header-links {
 	margin: 0;
 }
@@ -397,6 +437,18 @@ input[type="radio"].visually-hidden {
 
 .links-wrap {
 	border-bottom: 1px solid rgba(0,0,0, 0.3);
+}
+
+.feedback-header-links a:hover,
+.feedback-header-links a:active,
+.feedback-header-links a:focus {
+	color: #e84d37;
+	outline: 0;
+}
+
+.feedback-header-links a:hover .links-wrap,
+.feedback-header-links a:focus .links-wrap {
+	border-bottom: 1px solid rgba(236,89,60, 0.3);
 }
 
 .user-nav .basket {
@@ -498,6 +550,7 @@ input[type="radio"].visually-hidden {
 
 .radio-indicator:focus {
 	background-color: #b2c1b7;
+	outline: 0;
 }
 
 .slider-page-wrap {
@@ -629,13 +682,26 @@ input[type="radio"].visually-hidden {
 	cursor: pointer;
 }
 
-.signature b {
+.signature-link {
+	text-decoration: none;
+	color: #fff;
 	margin: 0;
 	padding: 0;
 	font-weight: 500;
-	z-index: 1;
+	z-index: 2;
 	position: relative;
 	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.signature-link:hover,
+.signature-link:active,
+.signature-link:focus {
+	color: #e84d37;
+}
+
+.signature-link:hover,
+.signature-link:focus {
+	border-bottom: 1px solid rgba(236,89,60, 0.3);
 }
 
 .image-link {
@@ -691,12 +757,12 @@ input[type="radio"].visually-hidden {
 }
 
 
-.image-link:before {
+.catalog-item:before {
 	content: '';
 	position: absolute;
 	width: 60px;
 	height: 60px;
-	z-index: 1;
+	z-index: 2;
 	background-image: url(../img/hit.png);
 }
 
@@ -804,11 +870,21 @@ input[type="radio"].visually-hidden {
 	line-height: 30px;
 }
 
-.blog-title b {
+.blog-link {
+	text-decoration: none;
+	color: #000;
 	background-image: linear-gradient(to bottom, #000, #000);
 	background-position: 0 27px;
  	background-repeat: repeat-x;
   	background-size: 1px;
+}
+
+.blog-link:hover,
+.blog-link:active,
+.blog-link:focus {
+	color: #e84d37;
+	outline: 0;
+	background-image: linear-gradient(to bottom, rgba(236,89,60, 0.3), rgba(236,89,60, 0.3));
 }
 
 .mail {
@@ -857,6 +933,16 @@ input[type="radio"].visually-hidden {
 	max-width: 340px;
 }
 
+.write-mail input:focus {
+	outline: 0;
+	box-shadow: 0 0 0 2px #8fbdec;
+}
+
+.write-mail input:hover {
+	outline: 0;
+	box-shadow: 0 0 0 2px #c7c6c5;
+}
+
 .send-btn {
 	padding: 0;
 	margin: 0;
@@ -866,6 +952,7 @@ input[type="radio"].visually-hidden {
 	font-weight: 700;	
 	line-height: 24px;
 	border: 0;
+	cursor: pointer;
 	margin-left: 12px;
 }
 
@@ -982,6 +1069,14 @@ footer .conteiner{
 .social svg {
 	border: 3px solid #c2cec7;
 	border-radius: 50%;
+}
+
+.social a:hover path {
+	fill: #fff;
+}
+
+.social a:focus path {
+	fill: #fff;
 }
 
 .social a:last-child {
@@ -1103,6 +1198,11 @@ footer .conteiner{
 	border: 1px solid #d3d3d2;
 	font-size: 16px;
  	border-radius: 5px;
+}
+
+.modal-item input:focus {
+	outline: 0;
+	border: 2px solid #8fbdec;
 }
 
 .modal-item:nth-child(3) input {

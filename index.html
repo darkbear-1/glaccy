@@ -16,7 +16,7 @@
 		<nav>
 			<ul class="site-nav">
 				<li class="catalog-hover">
-					<a href="#" class="catalog-link"><span>Каталог</span></a>	
+					<a href="#" class="catalog-link header-link"><span>Каталог</span></a>	
 					<div class="catalog-nav">
 						<p>Новинки</p>
 						<ul>
@@ -27,8 +27,8 @@
 						</ul>
 					</div>
 				</li>
-				<li><a href="#" class="delivery-link"><span>Доставка и оплата</span></a></li>
-				<li><a href="#"><span>О Компании</span></a></li>
+				<li><a href="#" class="delivery-link header-link"><span>Доставка и оплата</span></a></li>
+				<li><a href="#" class="header-link"><span>О Компании</span></a></li>
 			</ul>
 			<ul class="user-nav">
 				<li class="loop-link">
@@ -138,41 +138,33 @@
 		<section class="catalog">
 			<h2 class="visually-hidden">Каталог товаров:</h2>
 			<p class="catalog-item">
-				<a href="#" class="image-link">
 					<img src="img/catalog-image1.png" alt="">
 					<span class="price">310 &#8381<b>/кг</b></span>
-				</a>
-				<span class="signature"><b>Сливочное с апельсиновым <br> джемом и цитрусовой стружкой</b>
+				<span class="signature"><a href="#" class="signature-link">Сливочное с апельсиновым <br> джемом и цитрусовой стружкой</a>
 				</span>
 				<a href="#" class="button preview">Быстрый просмотр</a>
 				<span class="image-link-show"></span>
 			</p>
 			<p class="catalog-item">
-				<a href="#" class="image-link">`
 					<img src="img/catalog-image2.png" alt="">
 					<span class="price">380 &#8381<b>/кг</b></span>
-			</a>
-				<span class="signature"><b>Сливочно-кофейное с кусочками <br> шоколада</b>
+				<span class="signature"><a href="#" class="signature-link">Сливочно-кофейное с кусочками <br> шоколада</a>
 				</span>
 				<a href="#" class="button preview">Быстрый просмотр</a>
 				<span class="image-link-show"></span>
 			</p>
 			<p class="catalog-item">
-				<a href="#" class="image-link">
 					<img src="img/catalog-image3.png" alt="">
 					<span class="price">355 &#8381<b>/кг</b></span>
-			</a>
-				<span class="signature"><b>Сливочно-клубничное с <br> присыпкой из белого шоколада</b>
+				<span class="signature"><a href="#" class="signature-link">Сливочно-клубничное с <br> присыпкой из белого шоколада</a>
 				</span>
 				<a href="#" class="button preview">Быстрый просмотр</a>
 				<span class="image-link-show"></span>
 			</p>
 			<p class="catalog-item">
-				<a href="#" class="image-link">
 					<img src="img/catalog-image4.png" alt="">
 					<span class="price">415 &#8381<b>/кг</b></span>
-				</a>
-				<span class="signature"><b>Сливочное крем-брюле с <br> карамельной подливкой</b>
+				<span class="signature"><a href="#" class="signature-link">Сливочное крем-брюле с <br> карамельной подливкой</a>
 				</span>
 				<a href="#" class="button preview">Быстрый просмотр</a>
 				<span class="image-link-show"></span>
@@ -203,9 +195,9 @@
 			</section>
 			<section class="blog">
 				<p>Новое в нашем блоге</p>
-				<h2 class="blog-title"><b>10 способов сервировки <br>
+				<h2 class="blog-title"><a href="#" class="blog-link">10 способов сервировки <br>
 					фруктовых щербетов к <br>
-					столу</b></h2>
+					столу</a></h2>
 			</section>
 			<section class="mail">
 				<form action="#" class="write-mail" method="post">
@@ -324,7 +316,7 @@
 		var loginBlur = document.querySelector(".basket");
 		var radioIndicator = document.querySelectorAll(".radio-indicator");
 		var sliderPage = document.querySelectorAll(".slider-page")
-		var imageLink = document.querySelectorAll(".image-link");
+		var imageLink = document.querySelectorAll(".signature-link");
 		var preview = document.querySelectorAll(".preview");
 		var imageShow = document.querySelectorAll(".image-link-show");
 		var modalClick = document.querySelector(".feedback-button");
@@ -380,24 +372,61 @@
 			document.body.style.backgroundColor="#849d8f";
 		})
 
+		radioIndicator[0].addEventListener('keydown', function(e) {
+			var keyName = e.keyCode;
+			if (keyName == 13) {
+				sliderPage[1].classList.remove("page-show");
+				sliderPage[2].classList.remove("page-show");
+				sliderPage[0].classList.add("page-show");
+				document.body.style.backgroundColor="#849d8f";
+				radioIndicator[0].style.backgroundColor="#fff";
+				radioIndicator[1].style.backgroundColor="transparent";
+				radioIndicator[2].style.backgroundColor="transparent";
+			}
+
+		})
+
 		radioIndicator[1].addEventListener("click", function () {
 			sliderPage[0].classList.remove("page-show");
 			sliderPage[2].classList.remove("page-show");
 			sliderPage[1].classList.add("page-show");
 			document.body.style.backgroundColor="#8996a6";
-			// document.body.style.backgroundImage='url(img/ice-cream2.png)';
 		})
 
-		radioIndicator[1].onclick = function() {
-		  console.log('da');
+		radioIndicator[1].addEventListener('keydown', function(e) {
+			var keyName = e.keyCode;
+			if (keyName == 13) {
+				sliderPage[0].classList.remove("page-show");
+				sliderPage[2].classList.remove("page-show");
+				sliderPage[1].classList.add("page-show");
+				document.body.style.backgroundColor="#8996a6";
+				radioIndicator[1].style.backgroundColor="#fff";
+				radioIndicator[0].style.backgroundColor="transparent";
+				radioIndicator[2].style.backgroundColor="transparent";
 
-		};
+			}
+
+		})
 
 		radioIndicator[2].addEventListener("click", function () {
 			sliderPage[0].classList.remove("page-show");
 			sliderPage[1].classList.remove("page-show");
 			sliderPage[2].classList.add("page-show");
 			document.body.style.backgroundColor="#9d8b84";
+		})
+
+		radioIndicator[2].addEventListener('keydown', function(e) {
+			var keyName = e.keyCode;
+			if (keyName == 13) {
+				sliderPage[0].classList.remove("page-show");
+				sliderPage[1].classList.remove("page-show");
+				sliderPage[2].classList.add("page-show");
+				document.body.style.backgroundColor="#9d8b84";
+				radioIndicator[2].style.backgroundColor="#fff";
+				radioIndicator[0].style.backgroundColor="transparent";
+				radioIndicator[1].style.backgroundColor="transparent";
+			}
+
 		})
 
 		imageLink[0].addEventListener("focus", function() {
@@ -410,6 +439,14 @@
 			imageShow[0].classList.remove("link-show");
 			preview[0].classList.remove("preview-show");
 		})
+
+		function removeImage(e) {
+		    if(!e.target.matches('.feedback-header, .feedback-header *')) {
+		        loginShow.classList.remove('feedback-header-show');
+		    }
+		};
+
+		window.addEventListener("click", removeImage);
 
 		imageLink[1].addEventListener("focus", function() {
 			imageShow[1].classList.add("link-show");
@@ -445,8 +482,15 @@
 		})
 
 		function remove(e) {
-		    if(!e.target.matches('.feedback-header, .feedback-header *')) {
-		        loginShow.classList.remove('feedback-header-show');
+		    if(!e.target.matches('.image-link, .image-link *')) {
+		        imageShow[0].classList.remove('link-show');
+		        preview[0].classList.remove("preview-show");
+		        imageShow[1].classList.remove('link-show');
+		        preview[1].classList.remove("preview-show");
+		        imageShow[2].classList.remove('link-show');
+		        preview[2].classList.remove("preview-show");
+		        imageShow[3].classList.remove('link-show');
+		        preview[3].classList.remove("preview-show");
 		    }
 		};
 

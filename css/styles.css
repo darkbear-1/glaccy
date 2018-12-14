@@ -10,6 +10,11 @@ body {
 	transition: 0.5s;
 }
 
+.catalog-page {
+	background-image: url(../img/bg-layout.png);
+	background-repeat: repeat-x;
+}
+
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
@@ -78,7 +83,7 @@ input[type="radio"].visually-hidden {
 }
 
 .breadcrumbs li {
-	margin-right: 11px;
+	margin-right: 22px;
 }
 
 .breadcrumbs li:last-child {
@@ -120,8 +125,8 @@ input[type="radio"].visually-hidden {
 .site-nav {
 	margin: 0;
 	padding: 0;
-	margin-top: 30px;
-	margin-left: 4px;
+	margin-top: 27px;
+	margin-left: 10px;
 	list-style: none;
 	display: flex;
 	justify-content: space-between;
@@ -129,19 +134,14 @@ input[type="radio"].visually-hidden {
 }
 
 .site-nav li {
-	margin-right: 6px;
 	height: 30px;
-}
-
-.site-nav li:last-child {
-	margin-right: 0px;
 }
 
 .site-nav a {
 	text-decoration: none;
 	position: relative;
 	line-height: 18px;
-	padding: 9px 16px;
+	padding: 6px 14px;
 	color: #fff;
 	outline: 0;
 	border-radius: 15px;
@@ -557,6 +557,110 @@ input[type="radio"].visually-hidden {
 
 .user-nav .basket {
 	margin-right: 0;
+}
+
+.basket-header {
+	padding: 20px 15px;
+	right: 0;
+	position: absolute;
+	border-radius: 5px;
+	background-color: #f8f7f4;
+	margin-top: 5px;
+	display: block;
+}
+
+.basket-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.basket-item {
+	color: #000;
+}
+
+.basket-item:first-child {
+	color: #000;
+}
+
+.basket-item table td,
+.basket-item table tr,
+.basket-item table {
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+	padding-top: 10px;
+	border-collapse: collapse;
+}
+
+.basket-item table td {
+	padding-left: 30px;
+	font-size: 13px;
+	line-height: 16px;
+	font-weight: 400;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.basket-item table b {
+	font-size: 13px;
+	line-height: 16px;
+	font-weight: 400;
+	color: #999999;
+}
+
+.basket-item table {
+	border-bottom: 1px solid #cacac7;
+}
+
+.basket-item table tr:last-child {
+	margin-bottom: 0;
+}
+
+.basket-item table td:first-child,
+.basket-item table td:nth-child(3) {
+	padding-left: 0;
+}
+
+.basket-item table td:first-child {
+	padding-top: 0;
+}
+
+.basket-item table td:nth-child(2) {
+	vertical-align: top;
+	padding: 0 15px;
+}
+
+.basket-item-remove {
+	position: relative;
+	font-size: 0;
+	border: 0;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.basket-item-remove:before,
+.basket-item-remove:after {
+	content: '';
+	width: 15px;
+	height: 1px;
+	top: 2px;
+	left: 0;
+	position: absolute;
+	background-color: #000;
+}
+
+.basket-item-remove:before {
+	transform: rotate(45deg);
+}
+
+.basket-item-remove:after {
+	transform: rotate(-45deg);
+}
+
+.basket-item:nth-child(2) {
+	margin-top: 15px;
+	text-align: right;
 }
 
 .phone-number {

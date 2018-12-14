@@ -50,7 +50,71 @@ input[type="radio"].visually-hidden {
 .main-header nav {
 	flex-grow: 1;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
+}
+
+.catalog-page .main-header nav {
+	flex-grow: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.main-header nav:after {
+	content: '';
+	width: 100%;
+	order: 1;
+}
+
+.breadcrumbs {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 23px;
+	justify-content: space-between;
+	display: flex;
+	order: 2;
+}
+
+.breadcrumbs li {
+	margin-right: 11px;
+}
+
+.breadcrumbs li:last-child {
+	margin-right: 0;
+}
+
+.breadcrumbs a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 400;
+	border-bottom: 1px solid rgba(255,255,255, 0.2);
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:active,
+.breadcrumbs a:focus {
+	color: #e84d37;
+	outline: 0;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+	border-bottom: 1px solid rgba(236,89,60, 0.3);
+}
+
+.breadcrumbs .bread-current {
+	border: 0;
+}
+
+.breadcrumbs .bread-current:hover,
+.breadcrumbs .bread-current:focus,
+.breadcrumbs .bread-current:active {
+	border: 0;
+	color: #fff;
 }
 
 .site-nav {
@@ -85,6 +149,14 @@ input[type="radio"].visually-hidden {
 
 .site-nav span {
 	border-bottom: 1px solid rgba(255,255,255, 0.2);
+}
+
+.site-current {
+	background-color: #d07058;
+}
+
+.site-current span {
+	border: 0;
 }
 
 .site-nav li:hover span {
@@ -246,6 +318,10 @@ input[type="radio"].visually-hidden {
 	padding-right: 33px;
 }
 
+.catalog-page .basket {
+	padding-right: 17px;
+}
+
 .user-nav svg {
 	margin-top: -10px;
 	top: 50%;
@@ -309,7 +385,7 @@ input[type="radio"].visually-hidden {
 	border-radius: 5px;
 	background-color: #f8f7f4;
 	position: absolute;
-	right: 10px;
+	right: 0;
 	display: none;
 	box-shadow: 0px 20px 40px 0 rgba(0,0,0,0.4);
 }
@@ -363,7 +439,7 @@ input[type="radio"].visually-hidden {
 
 .feedback-header {
 	padding: 20px 0;
-	right: 10px;
+	right: 0;
 	position: absolute;
 	border-radius: 5px;
 	background-color: #f8f7f4;

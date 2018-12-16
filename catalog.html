@@ -28,10 +28,12 @@
 				<li><a href="#" class="delivery-link header-link" tabindex="1"><span>Доставка и оплата</span></a></li>
 				<li><a href="#" class="header-link" tabindex="1"><span>О Компании</span></a></li>
 			</ul>
-			<ul class="breadcrumbs">
-				<li><a href="#" tabindex="0">Главная</a></li>
-				<li><a href="#" tabindex="0">Каталог</a></li>
-				<li><a class="bread-current">Сливочное</a></li>
+			<ul class="breadcrumbs-list">
+				<li class="breadcrumbs-item"><a href="#" tabindex="0" class="breadcrumbs-main">Главная</a></li>
+				<li>»</li>
+				<li class="breadcrumbs-item"><a href="#" tabindex="0">Каталог</a></li>
+				<li>»</li>
+				<li class="breadcrumbs-item"><a class="bread-current">Сливочное</a></li>
 			</ul>
 		</nav>
 			<ul class="user-nav">
@@ -89,10 +91,10 @@
 				<div class="basket-header">
 					<ul class="basket-list">
 						<li class="basket-item">
-						<table>
-							<tr>
+						<table class="basket-table">
+							<tr class="basket-table-item">
 								<td>
-									<button class="basket-item-remove">Закрыть корзину</button>
+									<button class="basket-item-remove" tabindex="1">Закрыть корзину</button>
 								</td>
 								<td>
 									<img src="img/catalog-image1-small.jpg" alt="">
@@ -107,9 +109,9 @@
 									300 руб.
 								</td>
 							</tr>
-							<tr>
+							<tr class="basket-table-item">
 								<td>
-									<button class="basket-item-remove">Закрыть корзину</button>
+									<button class="basket-item-remove" tabindex="1">Закрыть корзину</button>
 								</td>
 								<td>
 									<img src="img/catalog-image2-small.jpg" alt="">
@@ -127,8 +129,7 @@
 						</table>
 						</li>
 						<li class="basket-item">Итого: 750 руб.</li>
-						<li class="basket-item">сумм</li>
-						<li class="basket-item">заказ</li>
+						<li class="basket-item"><a href="#" class="basket-checkout" tabindex="1">Оформить заказ</a></li>
 					</ul>
 				</div>
 				</li>
@@ -139,6 +140,42 @@
 				</li>
 			</ul>
 	</header>
+	<main class="conteiner">
+		<section class="catalog-filters">
+			<h1>Сливочное мороженое</h1>
+			<form action="#" method="post" class="sort-form">
+				<label class="sort-label">
+					Сортировка: <br>
+					<select name="sort">
+						<option value="по популярности">по популярности</option>
+						<option value="сначала недорогие">сначала недорогие</option>
+						<option value="сначала дорогие">сначала дорогие</option>
+						<option value="по жирности">по жирности</option>
+					</select>
+				</label>
+				<label class="range-label">
+					<p>Цена: 100 руб. - 500 руб.</p>
+					<input type="range">
+				</label>
+					<fieldset class="fat-content">
+						<legend>Жирность:</legend>
+						<label><input type="radio" name="fat">0%</label>
+						<label><input type="radio" name="fat">до 10%</label>
+						<label><input type="radio" name="fat">до 30%</label>
+						<label><input type="radio" name="fat">выше 30%</label>
+					</fieldset>
+				<fieldset class="fillers-list">
+					<legend>Наполнители:</legend>
+					<label><input type="checkbox">шоколадные</label>
+					<label><input type="checkbox">сахарные присыпки</label>
+					<label><input type="checkbox">фрукты</label>
+					<label><input type="checkbox">сиропы</label>
+					<label><input type="checkbox">джемы</label>
+				</fieldset>
+				<button type="submit">Применить</button>
+			</form>
+		</section>
+	</main>
 	<script>
 		var catalogFocus = document.querySelector(".catalog-link");
 		var catalogShow = document.querySelector(".catalog-nav");
@@ -151,16 +188,12 @@
 		var inputMail = document.querySelector(".feedback-header-mail");
 		var inputPass = document.querySelector(".feedback-header-pass");
 		var loginBlur = document.querySelector(".basket");
-		var radioIndicator = document.querySelectorAll(".radio-indicator");
-		var sliderPage = document.querySelectorAll(".slider-page")
-		var imageLink = document.querySelectorAll(".signature-link");
-		var preview = document.querySelectorAll(".preview");
-		var imageShow = document.querySelectorAll(".image-link-show");
-		var modalClick = document.querySelector(".feedback-button");
-		var modal = document.querySelector(".modal");
-		var overlay = document.querySelector(".overlay");
-		var modalCloseClick = document.querySelector(".modal-close");
-		var formName = document.querySelector(".form-name");
+		//catalog-page var
+		var basketLink =document.querySelector(".basket");
+		var basketAnchor = document.querySelector(".basket-header");
+		var basketBlur = document.querySelector(".breadcrumbs-main");
+		var basketHeaderClose = document.querySelector(".basket-item-remove");
+		var basketItemTable = document.querySelectorAll('.basket-table-item');
 
 		catalogFocus.addEventListener("focus", function() {
 			catalogShow.classList.add("catalog-show");
@@ -200,6 +233,16 @@
 
 		inputPass.addEventListener("focus", function() {
 			loginShow.classList.add("feedback-header-show");
+		})
+
+// catalog-page JS
+
+		basketLink.addEventListener("focus", function() {
+			basketAnchor.classList.add("basket-show");
+		})
+
+		basketBlur.addEventListener("focus", function() {
+			basketAnchor.classList.remove("basket-show");
 		})
 	</script>
 </body>

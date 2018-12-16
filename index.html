@@ -453,6 +453,15 @@
 		    }
 		};
 
+		function catalog(e) {
+		    if(!e.target.matches('.catalog-nav, .catalog-nav *')) {
+		        catalogFocus.classList.remove('catalog-show');
+		        console.log("click");
+		    }
+		};
+
+		window.addEventListener("click", catalog);
+
 		window.addEventListener("click", removeImage);
 
 		imageLink[1].addEventListener("focus", function() {

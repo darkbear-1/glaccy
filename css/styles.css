@@ -72,7 +72,7 @@ input[type="radio"].visually-hidden {
 	order: 1;
 }
 
-.breadcrumbs {
+.breadcrumbs-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -82,15 +82,15 @@ input[type="radio"].visually-hidden {
 	order: 2;
 }
 
-.breadcrumbs li {
-	margin-right: 22px;
+.breadcrumbs-list li {
+	margin-right: 2px;
 }
 
-.breadcrumbs li:last-child {
+.breadcrumbs-list li:last-child {
 	margin-right: 0;
 }
 
-.breadcrumbs a {
+.breadcrumbs-list a {
 	text-decoration: none;
 	color: #fff;
 	font-size: 14px;
@@ -99,25 +99,25 @@ input[type="radio"].visually-hidden {
 	border-bottom: 1px solid rgba(255,255,255, 0.2);
 }
 
-.breadcrumbs a:hover,
-.breadcrumbs a:active,
-.breadcrumbs a:focus {
+.breadcrumbs-list a:hover,
+.breadcrumbs-list a:active,
+.breadcrumbs-list a:focus {
 	color: #e84d37;
 	outline: 0;
 }
 
-.breadcrumbs a:hover,
-.breadcrumbs a:focus {
+.breadcrumbs-list a:hover,
+.breadcrumbs-list a:focus {
 	border-bottom: 1px solid rgba(236,89,60, 0.3);
 }
 
-.breadcrumbs .bread-current {
+.breadcrumbs-list .bread-current {
 	border: 0;
 }
 
-.breadcrumbs .bread-current:hover,
-.breadcrumbs .bread-current:focus,
-.breadcrumbs .bread-current:active {
+.breadcrumbs-list .bread-current:hover,
+.breadcrumbs-list .bread-current:focus,
+.breadcrumbs-list .bread-current:active {
 	border: 0;
 	color: #fff;
 }
@@ -302,6 +302,9 @@ input[type="radio"].visually-hidden {
 	font-size: 14px;
 	line-height: 16px;
 	font-weight: 500;
+}
+
+.user-nav .user-links:focus:not(.basket) {
 	outline: 0;
 }
 
@@ -361,15 +364,20 @@ input[type="radio"].visually-hidden {
 	fill: #000;
 }
 
-.user-nav .basket:hover path,
-.user-nav .basket:hover circle,
-.user-nav .basket:focus circle {
+.catalog-page .basket path,
+.catalog-page .basket circle {
 	fill: #000;
 }
 
-.user-nav .basket:focus polygon,
-.user-nav .basket:hover polygon {
+.catalog-page .basket polygon,
+.catalog-page .basket:hover polygon,
+.catalog-page .basket:focus polygon {
 	fill: #e84d37;
+}
+
+.catalog-page .basket {
+	color: #000;
+	background-color: #fff;
 }
 
 .loop-link {
@@ -559,6 +567,10 @@ input[type="radio"].visually-hidden {
 	margin-right: 0;
 }
 
+.basket-li:hover .basket-header {
+	display: block;
+}
+
 .basket-header {
 	padding: 20px 15px;
 	right: 0;
@@ -566,7 +578,18 @@ input[type="radio"].visually-hidden {
 	border-radius: 5px;
 	background-color: #f8f7f4;
 	margin-top: 5px;
-	display: block;
+	display: none;
+	box-shadow: 0px 20px 40px 0 rgba(0,0,0,0.4);
+}
+
+.basket-header:before {
+	top: -5px;
+	left: 0;
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 5px;
+	background-color: transparent;
 }
 
 .basket-list {
@@ -658,9 +681,44 @@ input[type="radio"].visually-hidden {
 	transform: rotate(-45deg);
 }
 
-.basket-item:nth-child(2) {
+.basket-item:nth-child(2),
+.basket-item:last-child {
 	margin-top: 15px;
 	text-align: right;
+}
+
+.basket-checkout {
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	padding: 8px 15px;
+	font-size: 18px;
+	line-height: 24px;
+	border-radius: 30px;
+	background: linear-gradient(to top, #e74a35, #f26843);
+	box-shadow: 0 1px 3px 1px #ac1000;
+	outline: 0;
+}
+
+.basket-checkout:hover,
+.basket-checkout:active,
+.basket-checkout:focus {
+	background: linear-gradient(to bottom,#f58669 0%,#ec6f5e 100%);
+}
+
+.basket-checkout:active {
+	background: linear-gradient(to bottom,#d74632 0%,#e1613e 100%);
+	box-shadow: inset 0 2px 2px 0px #942718;
+}
+
+.basket-show {
+	display: block;
+}
+
+.table-item-show {
+	display: none;
 }
 
 .phone-number {
@@ -1496,3 +1554,61 @@ footer .conteiner{
 .overlay-show {
 	display: block;
 }
+
+/*catalog page style*/
+
+.catalog-filters * {
+	border: 1px solid red;
+}
+
+.catalog-filters h1 {
+	font-size: 35px;
+	line-height: 41px;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 19px;
+}
+
+.sort-form {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 860px;
+}
+
+.fat-content {
+	border: none;
+	padding: 0;
+}
+
+.fillers-list {
+	border: none;
+}
+
+.sort-form label, .fillers-list  {
+	margin-right: 15px;
+	flex-grow: 1;
+}
+
+.fat-content label {
+	margin: 0;
+}
+
+.sort-form label:nth-child(3) {
+	margin-right: 0;
+}
+
+.range-label p, .range-label input {
+	margin: 0;
+	padding: 0;
+}
+
+.sort-label select {
+	background-color: #a9bab0;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	color: #fff;
+	padding: 10px 15px;
+	border-radius: 20px
+}
+

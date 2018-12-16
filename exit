@@ -1,0 +1,77 @@
+[33mcommit b74d57eb212e6673be133f4a1dbe45ffd96c8733[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Fri Dec 14 15:33:42 2018 +0500
+
+    Начал делать popap корзины
+
+[33mcommit 2af944a65524d220145c71d077428d8d98f30683[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Fri Dec 14 10:58:11 2018 +0500
+
+    Начал catalog
+
+[33mcommit ea5eb94cd923cb331f518a8c0c1d73bd7f2f9df0[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Thu Dec 13 21:31:02 2018 +0500
+
+    Добавил плавности анимаций первой страницы
+
+[33mcommit fba5ba97de8da3c66e39f7469d603183bc2c1adf[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Thu Dec 13 21:07:16 2018 +0500
+
+    Закончил главную страницу
+
+[33mcommit f1dfd4a77b890a76d3807fff3b684b8003d2e520[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Thu Dec 13 11:49:19 2018 +0500
+
+    Функционал
+
+[33mcommit 3384eee0a0b923a2fe8c84c4cb80ae9e1df51637[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Wed Dec 12 22:07:40 2018 +0500
+
+    Начал делать функционал
+
+[33mcommit 2d0e5166ca3e46fc6de6adec493aea13f82c9cc7[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Tue Dec 11 21:30:23 2018 +0500
+
+    Доделал доступность
+
+[33mcommit 275bfe9d316ccc95cfbd22431fe3b6a6252d3529[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Tue Dec 11 11:55:57 2018 +0500
+
+    Сделал popup
+
+[33mcommit e4f443450229101cafe36a54d615a77d6f911ce9[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Mon Dec 10 21:46:43 2018 +0500
+
+    Начал footer
+
+[33mcommit 79364df594ca96cf5241a85e0f5b5da49243b180[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Mon Dec 10 11:59:52 2018 +0500
+
+    Добавил изменения в about
+
+[33mcommit 3f4076e5458ff7177b859d6d9c6ecaff80d14a19[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Sun Dec 9 21:34:54 2018 +0500
+
+    сделал половину блока about-us
+
+[33mcommit 87938bccfeb429f5ab81b3e4d7005e2dc3979a7d[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Sat Dec 8 23:51:24 2018 +0500
+
+    Закончил header и offer
+
+[33mcommit 04e305bfff3a6bcbf356abbdfe0c81f7149221a5[m
+Author: darkbear-1 <nigmradmir@yandex.ru>
+Date:   Fri Dec 7 11:53:41 2018 +0500
+
+    Начал Glaccy

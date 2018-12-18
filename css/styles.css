@@ -1577,6 +1577,7 @@ footer .conteiner{
 
 .fat-content {
 	border: none;
+	flex-grow: 
 	padding: 0;
 }
 
@@ -1609,6 +1610,7 @@ footer .conteiner{
 	font-size: 14px;
 	line-height: 16px;
 	font-weight: 400;
+	display: inline-block;
 }
 
 .sort-label select {
@@ -1630,7 +1632,6 @@ footer .conteiner{
 	width: 193px;
 	margin-top: 2px;
 	display: block;
-	border: 1px solid green;
 	position: relative;
 }
 
@@ -1643,3 +1644,117 @@ footer .conteiner{
 	right: 15px;
 	position: absolute;
 }
+
+.range	{
+	position: relative;
+	padding: 15px 20px;
+	border-radius: 20px;
+	background-color: rgba(255,255,255, 0.2);
+}
+
+.range-label p {
+	margin-left: 15px;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+	margin-bottom: 2px;
+}
+
+.range-indicator {
+	height: 4px;
+	width: 100%;
+	background-color: rgba(255,255,255, 0.5);
+}
+
+.range button {
+	border-radius: 50%;
+	background-color: #fff;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+}
+
+.range-btn1 {
+	left: 35px;
+}
+
+.range-btn1:after,
+.range-btn2:after  {
+	content: '';
+	width: 4px;
+	height: 4px;
+	background-color: #ababab;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	margin-left: -2px;
+	margin-top: -2px;
+}
+
+.range-btn2 {
+	right: 66px;
+}
+
+.range-indicator-view {
+	height: 4px;
+	top: 50%;
+	margin-top: -2px;
+	background-color: #fff;
+	left: 35px;
+	position: absolute;
+}
+
+.fat-content-wrap {
+	padding: 7px 15px;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	background-color: rgba(255,255,255,0.2);
+}
+
+.fat-content-item {
+	position: relative;
+	padding-left: 32px;
+}
+
+.fat-content legend {
+	margin-left: 15px;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+	margin-bottom: 2px;
+}
+
+.fat-indicator {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border: 3px solid rgba(255,255,255,0.8);
+}
+
+.fat-indicator:before {
+	content: '';
+	width: 6px;
+	height: 6px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	margin-top: -3px;
+	margin-left: -3px;
+}
+
+.fat-content-item input {
+	display: none;
+}
+
+.fat-content-item input:checked + .fat-indicator:before {
+	background-color: rgba(255,255,255,0.8);
+}
+

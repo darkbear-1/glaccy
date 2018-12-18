@@ -157,14 +157,37 @@
 				</label>
 				<label class="range-label">
 					<p>Цена: 100 руб. - 500 руб.</p>
-					<input type="range">
+					<div class="range">
+						<div class="range-indicator"></div>
+						<div class="range-indicator-view"></div>
+						<button class="range-btn1"></button>
+						<button class="range-btn2"></button>
+					</div>
 				</label>
 					<fieldset class="fat-content">
 						<legend>Жирность:</legend>
-						<label><input type="radio" name="fat">0%</label>
-						<label><input type="radio" name="fat">до 10%</label>
-						<label><input type="radio" name="fat">до 30%</label>
-						<label><input type="radio" name="fat">выше 30%</label>
+						<div class="fat-content-wrap">
+							<label class="fat-content-item">
+								<input type="radio" name="fat">
+								<span class="fat-indicator"></span>
+								0%
+							</label>
+							<label class="fat-content-item">
+								<input type="radio" name="fat">
+								<span class="fat-indicator"></span>
+								до 10%
+							</label>
+							<label class="fat-content-item">
+								<input type="radio" name="fat">
+								<span class="fat-indicator"></span>
+								до 30%
+							</label>
+							<label class="fat-content-item">
+								<input type="radio" name="fat">
+								<span class="fat-indicator"></span>
+								выше 30%
+												</label>
+						</div>
 					</fieldset>
 				<fieldset class="fillers-list">
 					<legend>Наполнители:</legend>

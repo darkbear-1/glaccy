@@ -1557,16 +1557,16 @@ footer .conteiner{
 
 /*catalog page style*/
 
-.catalog-filters * {
+/*.catalog-filters * {
 	border: 1px solid red;
-}
+}*/
 
 .catalog-filters h1 {
 	font-size: 35px;
 	line-height: 41px;
 	margin: 0;
 	padding: 0;
-	margin-bottom: 19px;
+	margin-bottom: 26px;
 }
 
 .sort-form {
@@ -1577,7 +1577,6 @@ footer .conteiner{
 
 .fat-content {
 	border: none;
-	flex-grow: 
 	padding: 0;
 }
 
@@ -1585,32 +1584,18 @@ footer .conteiner{
 	border: none;
 }
 
-.sort-form label, .fillers-list  {
-	margin-right: 15px;
-	flex-grow: 1;
-}
-
-.fat-content label {
-	margin: 0;
-}
-
 .sort-form label:nth-child(3) {
 	margin-right: 0;
-}
-
-.range-label p, .range-label input {
-	margin: 0;
-	padding: 0;
 }
 
 .sort-label p {
 	margin: 0;
 	padding: 0;
-	margin-left: 11px;
+	margin-left: 16px;
 	font-size: 14px;
 	line-height: 16px;
-	font-weight: 400;
-	display: inline-block;
+	margin-bottom: 7px;
+	font-weight: 500;
 }
 
 .sort-label select {
@@ -1619,30 +1604,35 @@ footer .conteiner{
 	height: 100%;
 	width: 100%;
 	background-color: #a9bab0;
+	background-image: url(../img/icon-down-dir.svg);
+	background-repeat: no-repeat;
+	background-position: 165px 12px;
 	font-size: 16px;
 	line-height: 18px;
 	font-weight: 500;
 	color: #fff;
-	padding-left: 12px;
-	border-radius: 20px
+	padding-left: 16px;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.sort-label select:hover {
+	color: #000;
+	background-color: #fff;
+	background-image: url(../img/icon-down-dir-hov.svg);
+}
+
+.sort-label select:focus {
+	color: #000;
+	background-color: #fff;
+	background-image: url(../img/icon-down-dir-hov.svg);
 }
 
 .select-overlay {
 	height: 35px;
 	width: 193px;
-	margin-top: 2px;
 	display: block;
 	position: relative;
-}
-
-.select-overlay:after {
-	content: '';
-	border-style: solid;
-	border-width: 10px 6px 10px 6px;
-	border-color: #fff transparent transparent transparent;
-	top: 13px;
-	right: 15px;
-	position: absolute;
 }
 
 .range	{
@@ -1650,14 +1640,6 @@ footer .conteiner{
 	padding: 15px 20px;
 	border-radius: 20px;
 	background-color: rgba(255,255,255, 0.2);
-}
-
-.range-label p {
-	margin-left: 15px;
-	font-size: 14px;
-	line-height: 16px;
-	font-weight: 500;
-	margin-bottom: 2px;
 }
 
 .range-indicator {
@@ -1673,7 +1655,12 @@ footer .conteiner{
 	height: 20px;
 	position: absolute;
 	top: 50%;
-	margin-top: -10px;
+	border:0;
+}
+
+.range button:hover {
+	width: 22px;
+	height: 22px;
 }
 
 .range-btn1 {
@@ -1708,46 +1695,61 @@ footer .conteiner{
 }
 
 .fat-content-wrap {
-	padding: 7px 15px;
-	font-size: 16px;
-	line-height: 18px;
-	font-weight: 500;
+	padding: 6px 13px;
+	border-radius: 20px;
 	background-color: rgba(255,255,255,0.2);
 }
 
-.fat-content-item {
+.sort-form .fat-content-item {
+	margin: 0;
 	position: relative;
+	margin-right: 15px;
 	padding-left: 32px;
+}	
+
+.fat-content b {
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+}
+
+.sort-form .fat-content-item:nth-child(3) {
+	margin-right: 15px;
+}
+
+.sort-form .fat-content-item:last-child {
+	margin-right: 0;
 }
 
 .fat-content legend {
-	margin-left: 15px;
+	margin-left: 12px;
 	font-size: 14px;
 	line-height: 16px;
 	font-weight: 500;
-	margin-bottom: 2px;
+	margin-bottom: 8px;
 }
 
 .fat-indicator {
 	display: inline-block;
 	position: absolute;
 	left: 0;
-	width: 12px;
-	height: 12px;
+	width: 16px;
+	height: 15px;
 	border-radius: 50%;
+	cursor: pointer;
 	border: 3px solid rgba(255,255,255,0.8);
 }
 
 .fat-indicator:before {
 	content: '';
-	width: 6px;
-	height: 6px;
+	width: 7px;
+	height: 7px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	border-radius: 50%;
-	margin-top: -3px;
-	margin-left: -3px;
+	margin-top: -4px;
+	margin-left: -4px;
 }
 
 .fat-content-item input {
@@ -1758,3 +1760,101 @@ footer .conteiner{
 	background-color: rgba(255,255,255,0.8);
 }
 
+.fat-indicator:hover {
+	border-color: rgba(255,255,255);
+}
+
+.fat-content-item input:checked:hover + .fat-indicator:before {
+	background-color: rgba(255,255,255);
+}
+
+.range {
+    height:4px;
+	padding: 0;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.range__button_1, .range__button_2 {
+    position: absolute;
+    top: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    cursor: pointer;
+    transform: translateY(-50%);
+
+    border: none;
+    border-radius: 50%;
+    background-color: #999;
+}
+.range__between
+{
+  position: absolute;
+    height: 100%;
+    width: 0;
+    border: none;
+    background-color: rgba(255,255,255);
+}
+.range_inpt1, .range_inpt2
+{
+ 	width: 50px;
+}
+
+.range__button_1:before,
+.range__button_2:before {
+	content: '';
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	left: 50%;
+	top: 50%;
+	margin-left: -2px;
+	margin-top: -2px;
+	background-color: #ababab;
+	position: absolute;
+}
+
+.range-wrap {
+	margin-top: 7px;
+	padding: 15px 20px;
+	border-radius: 20px;
+	background-color: rgba(255,255,255,0.2);
+}
+
+.range-price {
+	margin-left: 15px;
+}
+
+.range-label {
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+	margin-left: 17px;
+	flex-grow: 1;
+	margin-right: 15px;
+}
+
+.range-label * {
+}
+
+.range-label input {
+	-webkit-appearance: none;
+	background-color: transparent;
+	padding: 0;
+	border: 0;
+	color: #fff;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+	font-family: inherit;
+	width: 25px;
+}
+
+.range-label input::-webkit-outer-spin-button,
+.range-label input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

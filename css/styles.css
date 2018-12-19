@@ -1734,7 +1734,7 @@ footer .conteiner{
 	position: absolute;
 	left: 0;
 	width: 16px;
-	height: 15px;
+	height: 16px;
 	border-radius: 50%;
 	cursor: pointer;
 	border: 3px solid rgba(255,255,255,0.8);
@@ -1742,8 +1742,8 @@ footer .conteiner{
 
 .fat-indicator:before {
 	content: '';
-	width: 7px;
-	height: 7px;
+	width: 8px;
+	height: 8px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -1857,4 +1857,22 @@ footer .conteiner{
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.fillers-indicator {
+	position: absolute;
+	left: 0;
+}
+
+.fillers-item input {
+	display: none;
+}
+
+.fillers-item {
+	position: relative;
+	padding-left: 32px;
+}
+
+.fillers-indicator polygon {
+	display: none;
 }

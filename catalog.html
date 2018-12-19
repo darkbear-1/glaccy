@@ -11,7 +11,7 @@
 <body class="catalog-page">
 	<header class="main-header conteiner">
 		<nav>
-		<img src="img/Logo.svg" alt="Логотип Gllacy" class="header-logo">
+		<a href="index.html" class="logo-link" tabindex="1"><img src="img/Logo.svg" alt="Логотип Gllacy" class="header-logo"></a>
 			<ul class="site-nav">
 				<li class="catalog-hover">
 					<a href="#" class="catalog-link header-link site-current" tabindex="1"><span>Каталог</span></a>	
@@ -29,7 +29,7 @@
 				<li><a href="#" class="header-link" tabindex="1"><span>О Компании</span></a></li>
 			</ul>
 			<ul class="breadcrumbs-list">
-				<li class="breadcrumbs-item"><a href="#" tabindex="0" class="breadcrumbs-main">Главная</a></li>
+				<li class="breadcrumbs-item"><a href="index.html" tabindex="0" class="breadcrumbs-main">Главная</a></li>
 				<li>»</li>
 				<li class="breadcrumbs-item"><a href="#" tabindex="0">Каталог</a></li>
 				<li>»</li>
@@ -172,22 +172,23 @@
 						<div class="fat-content-wrap">
 							<label class="fat-content-item">
 								<input type="radio" name="fat">
-								<span class="fat-indicator" tabindex='0'></span>
+								<span class="fat-indicator" tabindex='0'>
+								<span class="fat-indicator-current"></span></span>
 								<b>0%</b>
 							</label>
 							<label class="fat-content-item">
-								<input type="radio" name="fat" checked>
-								<span class="fat-indicator" tabindex='0'></span>
+								<input type="radio" name="fat" checked='checked'>
+								<span class="fat-indicator" tabindex='0'><span class="fat-indicator-current"></span></span>
 								<b>до 10%</b>
 							</label>
 							<label class="fat-content-item">
 								<input type="radio" name="fat">
-								<span class="fat-indicator" tabindex='0'></span>
+								<span class="fat-indicator" tabindex='0'><span class="fat-indicator-current"></span></span>
 								<b>до 30%</b>
 							</label>
 							<label class="fat-content-item">
 								<input type="radio" name="fat">
-								<span class="fat-indicator" tabindex='0'></span>
+								<span class="fat-indicator" tabindex='0'><span class="fat-indicator-current"></span></span>
 								<b>выше 30%</b>
 							</label>
 						</div>
@@ -289,6 +290,153 @@
 		var basketBlur = document.querySelector(".breadcrumbs-main");
 		var basketHeaderClose = document.querySelector(".basket-item-remove");
 		var basketItemTable = document.querySelectorAll('.basket-table-item');
+		var fatIndicator = document.querySelectorAll(".fat-indicator");
+		var fatCurrent = document.querySelectorAll(".fat-indicator-current")
+		var fatInput = document.querySelectorAll("input[name='fat']");
+
+		fatIndicator[0].addEventListener("click", function () {
+			if (!fatInput[0].hasAttribute('checked')) {
+				fatInput[1].removeAttribute('checked');
+				fatInput[2].removeAttribute('checked');
+				fatInput[3].removeAttribute('checked');
+				fatInput[0].setAttribute('checked', 'checked');
+			}
+		})
+
+		fatIndicator[0].addEventListener('keydown', function(e) {
+			var keyName = e.keyCode;
+			if (keyName == 13) {
+				if (!fatInput[0].hasAttribute('checked')) {
+				fatInput[1].removeAttribute('checked');
+				fatInput[2].removeAttribute('checked');
+				fatInput[3].removeAttribute('checked');
+				fatInput[0].setAttribute('checked', 'checked');
+			}
+			}
+
+		})
+
+		fatIndicator[1].addEventListener("click", function () {
+			if (!fatInput[1].hasAttribute('checked')) {
+				fatInput[0].removeAttribute('checked');
+				fatInput[2].removeAttribute('checked');
+				fatInput[3].removeAttribute('checked');
+				fatInput[1].setAttribute('checked', 'checked');
+			}
+		})
+
+		fatIndicator[1].addEventListener('keydown', function(e) {
+			var keyName = e.keyCode;
+			if (keyName == 13) {
+				if (!fatInput[1].hasAttribute('checked')) {
+				fatInput[0].removeAttribute('checked');
+				fatInput[2].removeAttribute('checked');
+				fatInput[3].removeAttribute('checked');
+				fatInput[1].setAttribute('checked', 'checked');
+			}
+			}
+
+		})
+
+		fatIndicator[2].addEventListener("click", function () {
+			if (!fatInput[2].hasAttribute('checked')) {
+				fatInput[0].removeAttribute('checked');
+				fatInput[1].removeAttribute('checked');
+				fatInput[3].removeAttribute('checked');
+				fatInput[2].setAttribute('checked', 'checked');
+			}
+		})
+
+		fatIndicator[2].addEventListener('keydown', function(e) {
+			var keyName = e.keyCode;
+			if (keyName == 13) {
+				if (!fatInput[2].hasAttribute('checked')) {
+				fatInput[0].removeAttribute('checked');
+				fatInput[1].removeAttribute('checked');
+				fatInput[3].removeAttribute('checked');
+				fatInput[2].setAttribute('checked', 'checked');
+			}
+			}
+
+		})
+
+		fatIndicator[3].addEventListener("click", function () {
+			if (!fatInput[3].hasAttribute('checked')) {
+				fatInput[0].removeAttribute('checked');
+				fatInput[2].removeAttribute('checked');
+				fatInput[1].removeAttribute('checked');
+				fatInput[3].setAttribute('checked', 'checked');
+			}
+		})
+
+		fatIndicator[3].addEventListener('keydown', function(e) {
+			var keyName = e.keyCode;
+			if (keyName == 13) {
+				if (!fatInput[3].hasAttribute('checked')) {
+				fatInput[0].removeAttribute('checked');
+				fatInput[2].removeAttribute('checked');
+				fatInput[1].removeAttribute('checked');
+				fatInput[3].setAttribute('checked', 'checked');
+			}
+			}
+
+		})
+
+		// fatIndicator[1].addEventListener("click", function () {
+		// 	fatCurrent[1].classList.add("current-show");
+		// 	fatCurrent[0].classList.remove("current-show");
+		// 	fatCurrent[2].classList.remove("current-show");
+		// 	fatCurrent[3].classList.remove("current-show");
+		// 	var q = fatInput[1].hasAttribute('checked');
+		// 	console.log(q);
+		// })
+
+		// fatIndicator[1].addEventListener('keydown', function(e) {
+		// 	var keyName = e.keyCode;
+		// 	if (keyName == 13) {
+		// 		fatCurrent[1].classList.add("current-show");
+		// 		fatCurrent[0].classList.remove("current-show");
+		// 		fatCurrent[2].classList.remove("current-show");
+		// 		fatCurrent[3].classList.remove("current-show");
+		// 	}
+
+		// })
+
+		// fatIndicator[2].addEventListener("click", function () {
+		// 	fatCurrent[2].classList.add("current-show");
+		// 	fatCurrent[0].classList.remove("current-show");
+		// 	fatCurrent[1].classList.remove("current-show");
+		// 	fatCurrent[3].classList.remove("current-show");
+		// })
+
+		// fatIndicator[2].addEventListener('keydown', function(e) {
+		// 	var keyName = e.keyCode;
+		// 	if (keyName == 13) {
+		// 		fatCurrent[2].classList.add("current-show");
+		// 		fatCurrent[0].classList.remove("current-show");
+		// 		fatCurrent[1].classList.remove("current-show");
+		// 		fatCurrent[3].classList.remove("current-show");
+		// 	}
+
+		// })
+
+		// fatIndicator[3].addEventListener("click", function () {
+		// 	fatCurrent[3].classList.add("current-show");
+		// 	fatCurrent[0].classList.remove("current-show");
+		// 	fatCurrent[1].classList.remove("current-show");
+		// 	fatCurrent[2].classList.remove("current-show");
+		// })
+
+		// fatIndicator[3].addEventListener('keydown', function(e) {
+		// 	var keyName = e.keyCode;
+		// 	if (keyName == 13) {
+		// 		fatCurrent[3].classList.add("current-show");
+		// 		fatCurrent[0].classList.remove("current-show");
+		// 		fatCurrent[1].classList.remove("current-show");
+		// 		fatCurrent[2].classList.remove("current-show");
+		// 	}
+
+		// })
 
 		catalogFocus.addEventListener("focus", function() {
 			catalogShow.classList.add("catalog-show");

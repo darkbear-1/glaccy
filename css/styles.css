@@ -83,7 +83,7 @@ input[type="radio"].visually-hidden {
 }
 
 .breadcrumbs-list li {
-	margin-right: 2px;
+	margin-right: 7px;
 }
 
 .breadcrumbs-list li:last-child {
@@ -1582,6 +1582,8 @@ footer .conteiner{
 
 .fillers-list {
 	border: none;
+	margin-top: 12px;
+	padding: 0;
 }
 
 .sort-form label:nth-child(3) {
@@ -1760,12 +1762,26 @@ footer .conteiner{
 	background-color: rgba(255,255,255,0.8);
 }
 
+.fat-indicator:hover,
+.fat-indicator:focus {
+	border-color: rgba(255,255,255);
+}
+
+.fat-content-item input:checked:hover + .fat-indicator:before,
+.fat-content-item input:checked:focus + .fat-indicator:before {
+	background-color: rgba(255,255,255);
+}
+
 .fat-indicator:hover {
 	border-color: rgba(255,255,255);
 }
 
-.fat-content-item input:checked:hover + .fat-indicator:before {
-	background-color: rgba(255,255,255);
+.fat-content-item input:disabled + .fat-indicator {
+	border-color: rgba(255,255,255,0.4);
+}
+
+.fat-content-item input:disabled + .fat-indicator:before {
+	background-color: rgba(255,255,255,0.4);
 }
 
 .range {
@@ -1862,17 +1878,102 @@ footer .conteiner{
 .fillers-indicator {
 	position: absolute;
 	left: 0;
+	cursor: pointer;
+}
+
+.fillers-item input:checked + svg .fillers-on,
+.fillers-item input:checked + svg polygon {
+	display: block;
+}
+
+.fillers-item input:checked + svg .fillers-off {
+	display: none;
+}
+
+.fillers-item input:disabled + svg .fillers-on,
+.fillers-item input:disabled + svg polygon {
+	fill: rgba(255,255,255,0.4);
+}
+
+.fillers-item input:disabled + svg .fillers-off {
+	fill: rgba(255,255,255,0.4);
+}
+
+
+.fillers-indicator:hover .fillers-on,
+.fillers-indicator:hover .fillers-off,
+.fillers-indicator:hover polygon {
+	fill: #fff;
+}
+
+.fillers-indicator:focus .fillers-on,
+.fillers-indicator:focus .fillers-off,
+.fillers-indicator:focus polygon {
+	fill: #fff;
 }
 
 .fillers-item input {
 	display: none;
 }
 
+.fillers-list legend {
+	font-size: 14px;
+	margin-left: 16px;
+	font-weight: 500;
+}
+
 .fillers-item {
 	position: relative;
 	padding-left: 32px;
+	margin-right: 14px;
+}
+
+.sort-form .fillers-item:nth-child(3) {
+	margin-right: 20px;
+}
+
+.sort-form .fillers-item:last-child {
+	margin-right: 0;
 }
 
 .fillers-indicator polygon {
 	display: none;
+}
+
+.fillers-on {
+	display: none;
+}
+
+.fillers-wrap {
+	padding: 7px 18px;
+	border-radius: 20px;
+	margin-top: 2px;
+	background-color: rgba(255,255,255,0.2);
+}
+
+.form-submit {
+	border: 0;
+	padding: 0 26px;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	margin: 0;
+	margin-top: 37px;
+	border: 2px solid #fff;
+	border-radius: 20px;
+	color: #fff;
+	margin-left: 15px;
+	cursor: pointer;
+	background-color: rgba(255,255,255,0.2);
+}
+
+.form-submit:hover,
+.form-submit:focus {
+	background-color: #fff;
+	color: #000;
+	outline: 0;
+}
+
+.form-submit:active {
+
 }
